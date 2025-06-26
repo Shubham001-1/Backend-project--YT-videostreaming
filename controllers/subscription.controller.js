@@ -98,7 +98,8 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
     const aggregation = [
         {$match : {
         subscriber :new  mongoose.Types.ObjectId(userId) 
-        }},{
+        }},
+        {
             $lookup : {
             from : "users",
             localField: "channel",
@@ -106,7 +107,7 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
             as: "channels"
             }
         },
-        { $unwind : "$channels"},
+        //{ $unwind : "$channels"},
 
         {
     $project: {
