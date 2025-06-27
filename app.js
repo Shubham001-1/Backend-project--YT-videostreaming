@@ -18,13 +18,14 @@ import { videorouter } from "./routes/video.router.js";
 import {tweetrouter} from "./routes/tweet.router.js";
 import {subscriptionrouter} from "./routes/subscription.router.js";
 import { commentrouter } from "./routes/comment.router.js";
+import {likerouter} from "./routes/like.router.js";
 //routes declaration 
 app.use("/api/v1/user" , UserRouter) 
 app.use("/api/v1/video",videorouter)
 app.use("/api/v1/tweet",tweetrouter)
 app.use("/api/v1/subscription",subscriptionrouter)
 app.use("/api/v1/comment",commentrouter)
-
+app.use("/api/v1/like",likerouter)
 
 
 
